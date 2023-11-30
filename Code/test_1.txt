@@ -1,0 +1,102 @@
+// a list of 100 different movies with dierctor name and years relased
+
+The Shawshank Redemption (1994) - Frank Darabont
+The Godfather (1972) - Francis Ford Coppola
+Pulp Fiction (1994) - Quentin Tarantino
+Schindler's List (1993) - Steven Spielberg
+The Dark Knight (2008) - Christopher Nolan
+Fight Club (1999) - David Fincher
+Forrest Gump (1994) - Robert Zemeckis
+Inception (2010) - Christopher Nolan
+The Matrix (1999) - Lana and Lilly Wachowski
+Titanic (1997) - James Cameron
+The Lord of the Rings: The Fellowship of the Ring (2001) - Peter Jackson
+The Silence of the Lambs (1991) - Jonathan Demme
+12 Angry Men (1957) - Sidney Lumet
+The Social Network (2010) - David Fincher
+The Shining (1980) - Stanley Kubrick
+Jurassic Park (1993) - Steven Spielberg
+The Great Gatsby (2013) - Baz Luhrmann
+The Departed (2006) - Martin Scorsese
+Goodfellas (1990) - Martin Scorsese
+The Green Mile (1999) - Frank Darabont
+The Wizard of Oz (1939) - Victor Fleming
+La La Land (2016) - Damien Chazelle
+E.T. the Extra-Terrestrial (1982) - Steven Spielberg
+Gladiator (2000) - Ridley Scott
+The Grand Budapest Hotel (2014) - Wes Anderson
+Amadeus (1984) - Miloš Forman
+A Beautiful Mind (2001) - Ron Howard
+The Lion King (1994) - Roger Allers, Rob Minkoff
+The Usual Suspects (1995) - Bryan Singer
+The Godfather: Part II (1974) - Francis Ford Coppola
+The Breakfast Club (1985) - John Hughes
+Back to the Future (1985) - Robert Zemeckis
+The Revenant (2015) - Alejandro G. Iñárritu
+Blade Runner (1982) - Ridley Scott
+The Sound of Music (1965) - Robert Wise
+Interstellar (2014) - Christopher Nolan
+The Princess Bride (1987) - Rob Reiner
+The Truman Show (1998) - Peter Weir
+Gone with the Wind (1939) - Victor Fleming
+Reservoir Dogs (1992) - Quentin Tarantino
+Fargo (1996) - Joel Coen, Ethan Coen
+The Terminator (1984) - James Cameron
+The Maltese Falcon (1941) - John Huston
+The Big Lebowski (1998) - Joel Coen, Ethan Coen
+The Graduate (1967) - Mike Nichols
+No Country for Old Men (2007) - Joel Coen, Ethan Coen
+The Seven Samurai (1954) - Akira Kurosawa
+The Good, the Bad and the Ugly (1966) - Sergio Leone
+The Bridge on the River Kwai (1957) - David Lean
+A Clockwork Orange (1971) - Stanley Kubrick
+Casablanca (1942) - Michael Curtiz
+Memento (2000) - Christopher Nolan
+The Godfather: Part III (1990) - Francis Ford Coppola
+The Hateful Eight (2015) - Quentin Tarantino
+The Social Dilemma (2020) - Jeff Orlowski
+The Departed (2006) - Martin Scorsese
+The Prestige (2006) - Christopher Nolan
+The Pianist (2002) - Roman Polanski
+The Exorcist (1973) - William Friedkin
+Reservoir Dogs (1992) - Quentin Tarantino
+The Dark Knight Rises (2012) - Christopher Nolan
+The Deer Hunter (1978) - Michael Cimino
+A Clockwork Orange (1971) - Stanley Kubrick
+The Great Escape (1963) - John Sturges
+The Green Book (2018) - Peter Farrelly
+The Sixth Sense (1999) - M. Night Shyamalan
+The Shape of Water (2017) - Guillermo del Toro
+The King's Speech (2010) - Tom Hooper
+Lawrence of Arabia (1962) - David Lean
+The Graduate (1967) - Mike Nichols
+The Jungle Book (2016) - Jon Favreau
+The Rocky Horror Picture Show (1975) - Jim Sharman
+The Great Dictator (1940) - Charlie Chaplin
+The King and I (1956) - Walter Lang
+The Hunt for Red October (1990) - John McTiernan
+The Magnificent Seven (1960) - John Sturges
+The Martian (2015) - Ridley Scott
+The Man Who Knew Too Much (1956) - Alfred Hitchcock
+The Birds (1963) - Alfred Hitchcock
+The Shape of Things (2003) - Neil LaBute
+The Elephant Man (1980) - David Lynch
+The Insider (1999) - Michael Mann
+The 400 Blows (1959) - François Truffaut
+The French Connection (1971) - William Friedkin
+The Last Samurai (2003) - Edward Zwick
+The Untouchables (1987) - Brian De Palma
+The Wolf of Wall Street (2013) - Martin Scorsese
+The Ten Commandments (1956) - Cecil B. DeMille
+The Life Aquatic with Steve Zissou (2004) - Wes Anderson
+The Tree of Life (2011) - Terrence Malick
+The Royal Tenenbaums (2001) - Wes Anderson
+The Wrestler (2008) - Darren Aronofsky
+The Three Stooges (2012) - Bobby Farrelly, Peter Farrelly
+The Social Network (2010) - David Fincher
+The Longest Day (1962) - Ken Annakin, Andrew Marton
+The Manchurian Candidate (1962) - John Frankenheimer
+The Hudsucker Proxy (1994) - Joel Coen, Ethan Coen
+The Elephant Man (1980) - David Lynch
+The Birds (1963) - Alfred Hitchcock
+The Great Dictator (1940) - Charlie Chaplin
