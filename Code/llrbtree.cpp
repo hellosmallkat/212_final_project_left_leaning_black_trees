@@ -5,7 +5,7 @@
 */
 // notes 
 
-/*csc 212 pocject
+/*csc 212 project
 organize by year -> input a year and it outputs all movies in the list that
 once the node is found search my array martic for title and director
 if the year is repeated add things to to repeated year to a node already existing */
@@ -169,6 +169,22 @@ LLRBTNode* LLRBTree::find_ios(LLRBTNode* root, bool& disconnect){
 
     return temp;
 }
+
+bool LLRBTree::search(int data, LLRBTNode* root){
+    if(!root){
+        return false;
+    }
+
+    if(data == root->data){
+        return root;
+    }
+
+    if(data < root->data){
+        return this->search(data, root->left);
+    }else{
+        return this->search(data, root->right);
+    }
+}
 /*
  * Public Functions
 */
@@ -209,4 +225,8 @@ void LLRBTree::inorder(std::ostream& os){
 void LLRBTree::postorder(std::ostream& os){
     this->postorder(this->_root, os); // Call the private postorder function
     os << "\n";
+}
+LLRBTree::search(int data, LLRBTNode* root)
+{
+    this -> search( data,  this->_root);
 }
