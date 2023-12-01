@@ -6,9 +6,9 @@
 // notes 
 
 /*csc 212 pocject
-orgianze by year -> input a year and it outputs all movies in the list that
-once the node is found search my array martic for ttile and director
-if year is repeated add things to to repacted year to node already existing */
+organize by year -> input a year and it outputs all movies in the list that
+once the node is found search my array martic for title and director
+if the year is repeated add things to to repeated year to a node already existing */
 
 // Constructor for LLRBTNode class
 LLRBTNode::LLRBTNode(int data){
