@@ -2,12 +2,23 @@
 
 #include <iostream>
 #include <ostream>
+#include <list>
 
 // Defines MAX
 // When used, MAX(a,b) will be replaced with ((a > b) ? a : b)
 #ifndef MAX
 #define MAX(a,b) ((a > b) ? a : b)
 #endif
+
+class ListNode {
+private:
+    std::string movie_name;
+    std::string Director;
+    std::string Date;
+
+
+
+};
 
 // Underlying class which will be used to implement the BSTree class.
 // I.E. BSTree is made up of BSTNode
@@ -18,6 +29,7 @@ class LLRBTNode
         LLRBTNode* left;
         LLRBTNode* right;
         bool red;// true if red and false if black
+        std::list<ListNode> movie_list;
 
 
     public:
@@ -53,7 +65,7 @@ class LLRBTree
     public:
         LLRBTree();
         ~LLRBTree();
-void makeRootBlack();
+        void makeRootBlack();
         void insert(int data);
         //void remove(int data);
           void preorder(std::ostream& os = std::cout);
@@ -61,6 +73,11 @@ void makeRootBlack();
         void postorder(std::ostream& os = std::cout);
         int height();
 
+        void appendList(int key,ListNode temp);
+        void removeFromList(int key, std::string added_movie);
+        void printMoviesFromYear(int key);
+
+        LLRBTNode* LLRBTree::search(int data, LLRBTNode* root);
 
 
 
