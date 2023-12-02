@@ -5,10 +5,10 @@
 */
 // notes 
 
-/*csc 212 project
-organize by year -> input a year and it outputs all movies in the list that
-once the node is found search my array martic for title and director
-if the year is repeated add things to to repeated year to a node already existing */
+/*csc 212 pocject
+orgianze by year -> input a year and it outputs all movies in the list that
+once the node is found search my array martic for ttile and director
+if year is repeated add things to to repacted year to node already existing */
 
 // Constructor for LLRBTNode class
 LLRBTNode::LLRBTNode(int data){
@@ -47,33 +47,28 @@ LLRBTNode* LLRBTree::insert(int data, LLRBTNode* root){
         root->right = insert(data, root->right);
     }
 
-    if (CheckRed(root->right) && !CheckRed(root->left))
+    if (CheckRed(root->right) && !CheckRed(root->left))  // rotates left
      {
         root =  rotateLeft(root);
     }
-    if (CheckRed(root->left) && CheckRed(root->left->left))
+    if (CheckRed(root->left) && CheckRed(root->left->left)) // rotates right
     {
         root = rotateRight(root);
     }
-    if (CheckRed(root->right) && CheckRed(root->left))
+    if (CheckRed(root->right) && CheckRed(root->left)) // flip colors
      {
         flipColors(root);
     }
-    /*if(_root->red == true)
-    {
-
-    }*/
-
     return root;
 }
 void LLRBTree::makeRootBlack() {
     if (_root) {
-        _root->red = false;
+        _root->red = false; // makes the top node the right color
     }
 }
-bool LLRBTree::CheckRed(LLRBTNode* root)
+bool LLRBTree::CheckRed(LLRBTNode* root) // checks color
 {
-    if(root == nullptr)
+    if(root == nullptr) 
     {
         return false;
     }
@@ -169,14 +164,13 @@ LLRBTNode* LLRBTree::find_ios(LLRBTNode* root, bool& disconnect){
 
     return temp;
 }
-
-bool LLRBTree::search(int data, LLRBTNode* root){
+bool LLRBTree::search(int data, LLRBTNode* root){ // search function that recurvseie finds the node and return true or false 
     if(!root){
         return false;
     }
 
     if(data == root->data){
-        return root;
+        return true;
     }
 
     if(data < root->data){
@@ -226,7 +220,20 @@ void LLRBTree::postorder(std::ostream& os){
     this->postorder(this->_root, os); // Call the private postorder function
     os << "\n";
 }
-LLRBTree::search(int data, LLRBTNode* root)
-{
-    this -> search( data,  this->_root);
+
+
+
+void LLRBTree::appendList(int key, ListNode add_mov) { // finds the node that matchs the key and adds the lists to th already existing node
+     LLRBTNode* temp = search();
+     temp->movie_list.insert(add_mov);
+
+
+}
+void LLRBTree::removeFromList(int key, ListNode rem_mov) { // removes movies from an already existing node
+    LLRBTNode* temp = search();
+    temp->movie_list.remove(rem_mov);
+}
+void LLRBTree::printMoviesFromYear(int key) { // prints movies from a node that is found
+    LLRBTNode* temp = search();
+    std::cout <<
 }
