@@ -16,19 +16,16 @@ int main(int argc, char*argv[]){
 
     std::string line;
 
-    // Get the numbers to be inserted
-    std::getline(ifs, line);
-    std::stringstream ss(line);
-
-    int num;
-    // Insert the numbers
-    while(ss >> num){
-        tree.insert(num);
+    // Parse the file and insert into the tree
+    while(std::getline(ifs, line)) {
+        tree.inputToTree(line);
     }
+
     tree.makeRootBlack();
 
     print_tree(&tree, mode, fs);
     fs << "Tree Height: " << tree.height() << std::endl;
+    tree.printMoviesFromYear(1994,fs);
     fs.close();
 }
 

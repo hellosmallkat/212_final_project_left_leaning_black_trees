@@ -14,10 +14,11 @@ class ListNode {
 private:
     std::string movie_name;
     std::string Director;
-    std::string Date;
 
+public:
+    ListNode(std::string mov_name, std::string direct);
 
-
+    friend class LLRBTree;
 };
 
 // Underlying class which will be used to implement the BSTree class.
@@ -25,7 +26,7 @@ private:
 class LLRBTNode
 {
     private:
-        int data;
+        int key;
         LLRBTNode* left;
         LLRBTNode* right;
         bool red;// true if red and false if black
@@ -46,7 +47,7 @@ class LLRBTree
     private:
         LLRBTNode* _root;
 
-        LLRBTNode* insert(int data, LLRBTNode* root);
+        LLRBTNode* insert(int key, LLRBTNode* root);
        // LLRBTNode* remove(int data, LLRBTNode* root);
         LLRBTNode* find_ios(LLRBTNode* root, bool& disconnect);
         //LLRBTNode* color(int data, LLRBTNode* root);
@@ -73,12 +74,19 @@ class LLRBTree
         void postorder(std::ostream& os = std::cout);
         int height();
 
-        void appendList(int key,ListNode temp);
         void removeFromList(int key, std::string added_movie);
-        void printMoviesFromYear(int key);
+        void printMoviesFromYear(int key, std::ostream& os);
 
-        LLRBTNode* LLRBTree::search(int data, LLRBTNode* root);
+        LLRBTNode* search(int key, LLRBTNode* root);
 
 
+    bool isKeyInList(int data, LLRBTNode *root);
 
+    void appendList(int key, std::string add_mov);
+
+    void inputToTree(std::string input);
+
+    void removeMovie(std::string rem_mov);
 };
+
+int extractYear(std::string input);
