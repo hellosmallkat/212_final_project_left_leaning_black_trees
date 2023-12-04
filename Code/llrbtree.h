@@ -26,7 +26,7 @@ public:
 class LLRBTNode
 {
     private:
-        int key;
+        int _key;
         LLRBTNode* left;
         LLRBTNode* right;
         bool red;// true if red and false if black

@@ -6,6 +6,9 @@ void print_tree(LLRBTree* tree, int mode, std::ofstream& os);
 
 int main(int argc, char*argv[]){
     std::ifstream ifs(argv[1]);
+    if(ifs.fail()) {
+        std::cerr << "Couldn't find input file\n";
+    }
     int mode = std::stoi(argv[2]);
 
     std::string fname(argv[3]);
@@ -23,8 +26,8 @@ int main(int argc, char*argv[]){
 
     tree.makeRootBlack();
 
-    print_tree(&tree, mode, fs);
-    fs << "Tree Height: " << tree.height() << std::endl;
+//    print_tree(&tree, mode, fs);\
+//    fs << "Tree Height: " << tree.height() << std::endl;
     tree.printMoviesFromYear(1994,fs);
     fs.close();
 }

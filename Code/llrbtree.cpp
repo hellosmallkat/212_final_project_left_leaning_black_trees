@@ -14,7 +14,7 @@ if year is repeated add things to to repacted year to node already existing */
 
 // Constructor for LLRBTNode class
 LLRBTNode::LLRBTNode(int data){
-    this->key = data;
+    this->_key = data;
     this->left = nullptr;
     this->right = nullptr;
     this->red = true; // Initialize color as red
@@ -37,13 +37,14 @@ LLRBTNode::~LLRBTNode(){
 
 // Recursive function to insert a node into the Red-Black Tree
 LLRBTNode* LLRBTree::insert(int key, LLRBTNode* root){
-    if (!root) {
-        return new LLRBTNode(key);
+    if (!_root) {
+        this->_root = new LLRBTNode(key);
+        return _root;
     }
 
 
-    // Go left if key < key at this Node
-    if(key < root->key){
+    // Go left if _key < _key at this Node
+    if(key < root->_key){
         root->left = insert(key, root->left);
     // Go right otherwise
     }else{
@@ -113,7 +114,7 @@ void LLRBTree::preorder(LLRBTNode* root, std::ostream& os){
         return;
     }
 
-    os << root->key << ":" << root->red << " ";
+    os << root->_key << ":" << root->red << " ";
     this->preorder(root->left, os);
     this->preorder(root->right, os);
     return;
@@ -126,7 +127,7 @@ void LLRBTree::inorder(LLRBTNode* root, std::ostream& os){
     }
 
     this->inorder(root->left, os);
-    os << root->key << ":" << root->red << " ";
+    os << root->_key << ":" << root->red << " ";
     this->inorder(root->right, os);
     return;
 }
@@ -139,7 +140,7 @@ void LLRBTree::postorder(LLRBTNode* root, std::ostream& os){
 
     this->postorder(root->left, os);
     this->postorder(root->right, os);
-    os << root->key << ":" << root->red << " ";
+    os << root->_key << ":" << root->red << " ";
     return;
 }
 
@@ -172,27 +173,27 @@ bool LLRBTree::isKeyInList(int data, LLRBTNode* root){ // search function that r
         return false;
     }
 
-    if(data == root->key){
+    if(data == root->_key){
         return true;
     }
 
-    if(data < root->key){
+    if(data < root->_key){
         return this->search(data, root->left);
     }else{
         return this->search(data, root->right);
     }
 }
 
-LLRBTNode* LLRBTree::search(int key, LLRBTNode* root){ // search function that recurvseie finds the node of a certain key and returns a pointer to it.
+LLRBTNode* LLRBTree::search(int key, LLRBTNode* root){ // search function that recurvseie finds the node of a certain _key and returns a pointer to it.
     if(!root){
         return nullptr;
     }
 
-    if(key == root->key){
+    if(key == root->_key){
         return root;
     }
 
-    if(key < root->key){
+    if(key < root->_key){
         return this->search(key, root->left);
     }else{
         return this->search(key, root->right);
@@ -242,8 +243,8 @@ void LLRBTree::postorder(std::ostream& os){
 
 
 
-void LLRBTree::appendList(int key, std::string add_mov) { // finds the node that matchs the key and adds the lists to th already existing node
-    //Now that we know the key exists, we create a listNode object to push to the list at that key.
+void LLRBTree::appendList(int key, std::string add_mov) { // finds the node that matchs the _key and adds the lists to th already existing node
+    //Now that we know the _key exists, we create a listNode object to push to the list at that _key.
 
     //Parse String for title and directors
 
@@ -254,7 +255,7 @@ void LLRBTree::appendList(int key, std::string add_mov) { // finds the node that
         title = match[1].str();
         director = match[2].str();
     }
-    //with the title and director strings, we now create a new list node to push to the movie list @ the key's year
+    //with the title and director strings, we now create a new list node to push to the movie list @ the _key's year
 
     ListNode added_node(title, director);
     LLRBTNode* ptr = search(key, _root);
@@ -263,7 +264,7 @@ void LLRBTree::appendList(int key, std::string add_mov) { // finds the node that
 }
 
 void LLRBTree::removeMovie(std::string rem_mov) {
-    //First grab the year as our key from the remove command
+    //First grab the year as our _key from the remove command
     int year = extractYear(rem_mov);
     size_t openParenthesisPos = rem_mov.find('(');
 
@@ -286,14 +287,14 @@ void LLRBTree::removeMovie(std::string rem_mov) {
 
 
 
-void LLRBTree::removeFromList(int key, std::string rem_mov) { // removes movies from an already existing node this call has the parameters of the key that the list is at, with rem_mov being a parsed movie Title
+void LLRBTree::removeFromList(int key, std::string rem_mov) { // removes movies from an already existing node this call has the parameters of the _key that the list is at, with rem_mov being a parsed movie Title
     //First we need to call our search function in order to find where our movie we want to remove exists.
 
     LLRBTNode *ptr = search(key, _root);
     std::list<ListNode> temp = ptr->movie_list;
     for (auto iter = temp.begin(); iter != temp.end();) {
         if (iter->movie_name == rem_mov) {
-//          Iterate through the list existing at the key and then delete the movie existing at the list there.
+//          Iterate through the list existing at the _key and then delete the movie existing at the list there.
             temp.erase(iter);
             ptr->movie_list = temp;
             return;
@@ -304,7 +305,7 @@ void LLRBTree::removeFromList(int key, std::string rem_mov) { // removes movies 
     }
 }
 void LLRBTree::printMoviesFromYear(int key, std::ostream& os) { // prints movies from a node that is found
-    LLRBTNode* ptr = search(key, _root);
+    LLRBTNode* ptr = search(key, this->_root);
     std::list<ListNode> temp = ptr->movie_list;
     os << "Movies released in the year " << key << ": \n";
     for (auto iter = temp.begin(); iter != temp.end();) {
@@ -320,11 +321,16 @@ ListNode::ListNode(std::string mov_name, std::string direct) {
 
 
 void LLRBTree::inputToTree(std::string input) {
-    //parse for key, which is the year the movie came out;
+    //parse for _key, which is the year the movie came out;
     int key;
     key = extractYear(input);
-    if(isKeyInList(key, this->_root)) {
-        //If the key is in the list, append the string as a ListNode in the list @ that key value;
+
+    if(!_root) {
+        insert(key, _root);
+        appendList(key, input);
+    }
+    else if(isKeyInList(key, this->_root)) {
+        //If the _key is in the list, append the string as a ListNode in the list @ that _key value;
         appendList(key, input);
     }
     else {
@@ -351,5 +357,6 @@ int extractYear(std::string movieInfo) {
             return year;
         }
     }
+    return 0;
 }
 
